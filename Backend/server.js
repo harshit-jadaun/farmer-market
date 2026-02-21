@@ -6,6 +6,7 @@ import pool from "./db/connection.js";
 import router from "./routes/auth.route.js";    
 import dotenv, { config, configDotenv } from "dotenv";
 
+
 configDotenv();
 
 

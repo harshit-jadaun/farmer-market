@@ -1,7 +1,5 @@
 import db from "../db/connection.js";
 
-
-
 export const createUser = async (name, email, password) => {
     try {
         const result = await db.query(  
@@ -14,5 +12,7 @@ export const createUser = async (name, email, password) => {
         throw err;
     }       
 };
+
+
 
 

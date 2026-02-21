@@ -17,7 +17,7 @@ export const generateToken = (user) => {
         SECRET,
 
         {
-            expiresIn: "7d"
+            expiresIn: process.env.JWT_EXPIRE
         }
 
     );

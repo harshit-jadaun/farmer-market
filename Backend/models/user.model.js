@@ -1,4 +1,3 @@
-
 import pool from "../db/connection.js";
 
 
@@ -17,6 +16,5 @@ export const createUser = async (name, password,mobile_no,otp,role) => {
 
   return result.rows[0];
 };
-
 
 

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import express from "express";
 import { verifyToken } from "../middleware/auth.validation.js";
 import { register } from "../controllers/auth.controller.js";
@@ -19,4 +17,3 @@ router.get("/login", verifyToken, (req, res) => {
 );
 
 export default router;
->>>>>>> origin/working

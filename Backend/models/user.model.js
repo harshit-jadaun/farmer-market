@@ -2,7 +2,7 @@ import pool from "../db/connection.js";
 
 
 // CREATE USER
-export const createUser = async (name, password,mobile_no,otp,role) => {
+export const createUser = async (name, password, mobile_no, otp, role) => {
 
   const query = `
     INSERT INTO users (name,password,mobile_no,otp,role)
@@ -10,7 +10,7 @@ export const createUser = async (name, password,mobile_no,otp,role) => {
     RETURNING *;
   `;
 
-  const values = [name,password,mobile_no,otp,role];
+  const values = [name, password, mobile_no, otp, role];
 
   const result = await pool.query(query, values);
 

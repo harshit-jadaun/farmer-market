@@ -21,8 +21,6 @@ const PORT = process.env.PORT || 3000;
 pool.connect();
 
 
-app.use ("/api/auth", router);
-
 
 app.get("/", (req, res) => {
     res.send("server is working fine !");

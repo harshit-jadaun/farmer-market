@@ -13,12 +13,15 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
 
-
-pool.connect().then(() => {
-    console.log('Connected to the database');
-}).catch((err) => {
-    console.error('Error connecting to the database', err);
-});
-
+async function verifyDb() {
+    try {
+        await pool.query("SELECT 1");
+        console.log("database connected succesfully ! 👍");
+    } catch (error) {
+        console.error("database connection failed ");
+        process.exit(1);
+    }
+}
+verifyDb();
 
 export default pool;

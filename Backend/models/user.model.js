@@ -1,4 +1,4 @@
-import pool from "../db/connection.js";
+import pool from "../db/pgAdmin.js";
 
 
 // CREATE USER

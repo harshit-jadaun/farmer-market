@@ -8,7 +8,6 @@ configDotenv();
 export const register = async (req, res) => {
     const { name, password, mobile_no, otp, role } = req.body;
     try {
-        console.log("api hit");
         //hashing password 
         const hashedPassword = await bcrypt.hash(password, 10);
         // finally create user

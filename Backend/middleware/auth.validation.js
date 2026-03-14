@@ -4,12 +4,15 @@ const SECRET = process.env.JWT_SECRET;
 
 export const verifyToken = (req, res, next) => {
 
-  const token = req.headers.authorization;
+  const authHeader = req.headers.authorization;
 
-  if (!token)
+  if (!authHeader) {
     return res.status(401).json({
       message: "No token"
     });
+  }
+
+  const token = authHeader.split(" ")[1];
 
   try {
 
@@ -19,11 +22,9 @@ export const verifyToken = (req, res, next) => {
 
     next();
 
-  }
+  } catch (err) {
 
-  catch {
-
-    res.status(401).json({
+    return res.status(401).json({
       message: "Invalid token"
     });
 

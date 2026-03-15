@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+// schema of image   
+
 const imageSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,

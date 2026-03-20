@@ -8,10 +8,7 @@ const router = express.Router();
 router.post("/register", register);
 
 router.get("/login", verifyToken, (req, res) => {
-
-    res.json(req.user);
-
-}
-);
+  res.json(req.user);
+});
 
 export default router;

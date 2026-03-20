@@ -1,6 +1,5 @@
 import express, { response } from "express";
-import connection from "./db/mongoDB.js";
-import router from "./routes/auth.route.js";
+import connection from "./db/MongoDb.js";
 import imageRouter from "./routes/image.route.js";
 import dotenv from "dotenv";
 
@@ -11,14 +10,14 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
 
-app.use("/api", router,imageRouter);
+app.use("/api", imageRouter);
 
 app.get("/", (req, res) => {
-    res.send("server is working fine !");
+  res.send("server is working fine !");
 });
 
-await connection() ;
+await connection();
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

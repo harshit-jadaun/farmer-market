@@ -18,6 +18,8 @@ app.get("/", (req, res) => {
 
 await connection();
 
+//port define in .emv
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
